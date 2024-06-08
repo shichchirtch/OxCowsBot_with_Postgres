@@ -40,30 +40,9 @@ class VersusBot(Base):
 tallys_str_bot = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 four_bools = ["Ox", 'Ox', 'Ox', 'Ox']
-  # 'user_name': user_name,
-  #   'in_game': False,
-  #   'secret_kit': 'no_data',
-  #   'total_games': 0,
-  #   'wins': 0,
-  #   'game_list': [],
-  #   'bot_list': [],
-  #   'user_comb': 'setting_data',
-  #   'bot_kit': 'empty',
-  #   'bot_win': False,
-  #   'bot_pobeda': 0,
-  #   'language': 0,
-  #   'start_time': None,
-  #   'schritt': 0,
-  #   'first bot data':None,
-  #
-  #   'set_SET': 'NotSet',
-  #
-  #   'Hold_Level': 'SOLO',
-  #   'game_level': 'SOLO',
-  #
-  #   'inline_user_kit': ''}
+
 
 async def init_models():
     async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
+        # await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)

@@ -6,13 +6,14 @@ from aiogram.enums import ParseMode
 from states import redis_storage
 from config import settings
 from aiogram.types import BotCommand
+from aiogram.client.default import DefaultBotProperties
 
 # Функция конфигурирования и запуска бота
 async def main():
     await init_models()
     # Инициализируем бот и диспетчер
     bot = Bot(token=settings.BOT_TOKEN,
-              parse_mode=ParseMode.HTML)
+              default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
     dp = Dispatcher(storage=redis_storage)
     # Регистрируем роутеры в диспетчере
